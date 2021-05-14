@@ -15,6 +15,7 @@ class Book extends Model
 
     public function tags()
     {
+        // 18行目　belongsToManyメソッドで多対多として関連付けしています。withTimestampsメソッドで中間テーブルのタイムスタンプを更新します。
         return $this->belongsToMany('App\Models\Tag')->withTimestamps();
     }
 }
