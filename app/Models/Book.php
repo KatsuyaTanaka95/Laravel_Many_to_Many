@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+    ];
+
+    public function tags()
+    {
+        return $this->belongsToMany('App\Models\Tag')->withTimestamps();
+    }
 }
